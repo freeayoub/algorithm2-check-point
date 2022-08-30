@@ -1,0 +1,22 @@
+ALGORITHM part2sum2
+VAR
+    tab1,tab2 :array-OF integer[50];
+    i,j,sum2 : integer:=0;
+    istrue  : BOOLEAN;
+BEGIN
+
+   // parcourt tab1 
+     FOR i FROM 0 TO tab1.length-1 STEP 1  DO
+      istrue=false;
+        WHILE (j<tab2.length && istrue= false) DO
+          IF (tab1[i]=tab2[j]) THEN
+            istrue:=true;
+          END_IF
+          j:=j+1;
+        END_WHILE
+       if (istrue=true)
+       sum2=sum2+tab1[i]*2;
+       END_IF
+    END_FOR
+    write("the sum of overlapping elements is :",sum2);
+  END

@@ -1,0 +1,37 @@
+ALGORITHM part2
+VAR
+    tab1,tab2 :array-OF integer[50];
+    i,j,sum1 : integer:=0;
+    istrue  : BOOLEAN;
+BEGIN
+
+   // parcourt tab1 
+     FOR i FROM 0 TO tab1.length-1 STEP 1  DO
+      istrue=false;
+        WHILE (j<tab2.length && istrue= false) DO
+          IF (tab1[i]=tab2[j]) THEN
+            istrue:=true;
+          END_IF
+          j:=j+1;
+     END_WHILE
+       if (istrue=false)
+       sum1=sum1+tab1[i];
+       END_IF
+    END_FOR
+    //parcourt tab2
+   FOR j FROM 0 TO tab2.length-1 STEP 1  DO
+      istrue=false;
+        WHILE (i<tab1.length && istrue= false) DO
+          IF (tab2[j]=tab1[i]) THEN
+            istrue:=true;
+          END_IF
+          i:=i+1;
+     END_WHILE
+       if (istrue=false)
+       sum1=sum1+tab2[j];
+       END_IF
+    END_FOR
+
+    write("somme of distinct elements is :",sum1);
+  END
+  
